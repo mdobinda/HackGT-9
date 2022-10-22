@@ -1,0 +1,10 @@
+{
+    "root" :
+    [
+        "Angry", "Sad", "Stressed", "Anxious"
+    ],
+    "Angry" : 
+    [
+        "Irritated", ""
+    ]
+}

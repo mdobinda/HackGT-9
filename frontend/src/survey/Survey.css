@@ -20,8 +20,14 @@
     max-width: 500px;
     color:rgb(64, 64, 173);
     text-align:center;    
-    transition:ease-in-out transform .3s;
+    transition:ease-in-out transform .4s, ease-in-out opacity .9s;
     margin-top:3vh;
+}
+
+.Answer.hidden
+{
+    opacity:0;
+    transform:translate(0,-10px);
 }
 
 .Answer:hover
