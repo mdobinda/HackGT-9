@@ -1,0 +1,30 @@
+.Question
+{
+    text-align:center;
+    transition: ease-in-out opacity .6s, ease-in-out transform .6s;
+    opacity: 1;
+}
+
+.Question.hidden{
+    transform: translate(0,-10px);
+    opacity:0;
+}
+
+.Answer
+{
+    border-radius:15px;
+    background-color:white;
+    height:15vh;
+    line-height: 15vh;
+    width:50%;
+    max-width: 500px;
+    color:rgb(64, 64, 173);
+    text-align:center;    
+    transition:ease-in-out transform .3s;
+    margin-top:3vh;
+}
+
+.Answer:hover
+{
+    transform:translate(0,-1vh);
+}

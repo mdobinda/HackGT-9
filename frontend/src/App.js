@@ -2,6 +2,7 @@ import React from "react";
 import { Routes, Route, BrowserRouter} from 'react-router-dom'
 import Home from './routes/Home'
 import Maps from './components/Maps'
+import Feeling from './survey/Feeling';
 
 
 
@@ -12,7 +13,7 @@ function App() {
     <Routes>
       <Route path='/' element={<Home/>}/> 
       <Route path='/training' element={<Maps/>}/>
-      </Routes>
+    </Routes>
     
     
     </BrowserRouter>
