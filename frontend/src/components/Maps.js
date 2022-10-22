@@ -1,7 +1,7 @@
 import {Apiconfig} from '../Apiconfig'
 import GoogleMap from 'google-map-react';
 import {FmdGood} from '@mui/icons-material';
-import {Card, CardContent, Divider, Icon, Typography} from '@mui/material'
+import {Card, CardActionArea, CardContent, CardMedia, Divider, Icon, Typography} from '@mui/material'
 import React from "react";
 
 
@@ -26,13 +26,9 @@ const Maps = () => {
 
     return (
         <div style={{height: '100vh', width: '100vw', display: 'flex', justifyContent:'center', alignItems: 'center'}}>
-            <Card sx={{width: "50vw", height: "50vh"}}>
-                <CardContent>
-                    <Typography color="black">
-                        My safe spot
-                    </Typography>
-                <Divider/>
-                    <div style={{width: '47vw', height: '35vh', paddingTop: '5%'}}>
+            <Card sx={{width: "50vw", height: "45vh"}}>
+                <CardActionArea>
+                <div style={{width: '50vw', height: '35vh'}}>
                     <GoogleMap
                     bootstrapURLKeys={{ key: Apiconfig.mapsKey }}
                     defaultCenter={defaultProps.center}
@@ -44,6 +40,15 @@ const Maps = () => {
                         />
                     </GoogleMap>
                     </div>
+                
+                </CardActionArea>
+                <CardContent style={{padding: '5px'}}>
+                    <Typography color="black" variant="h5" align="center">
+                        My safe spot
+                    </Typography>
+                    <Typography color="black" align="center">
+                        This is a cool, laid back garden to vibe in
+                    </Typography>
                 </CardContent>
             </Card>
         </div>
