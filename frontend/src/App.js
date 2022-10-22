@@ -12,14 +12,8 @@ function App() {
     
     <Routes>
       <Route path='/' element={<Home/>}/> 
-<<<<<<< HEAD
-      <Route path='/map' element={<Maps/>}/>
-      <Route path='/what' element={<Feeling/>}/>
-    </Routes>
-=======
       <Route path='/training' element={<Maps/>}/>
-      </Routes>
->>>>>>> b16a6212a2409764bfca013b56f7b5a83c350560
+    </Routes>
     
     
     </BrowserRouter>
