@@ -1,10 +1,24 @@
-import Result from './result';
+import React from "react";
+import { Routes, Route, BrowserRouter} from 'react-router-dom'
+import Home from './routes/Home'
+import Maps from './components/Maps'
+import Feeling from './survey/Feeling';
+
+
 
 function App() {
   return (
-    <div style={{height:"100%", width:"100%", flex:true}}>
-      <Result/>
-    </div>
+    <BrowserRouter>
+    
+    <Routes>
+      <Route path='/' element={<Home/>}/> 
+      <Route path='/map' element={<Maps/>}/>
+      <Route path='/what' element={<Feeling/>}/>
+    </Routes>
+    
+    
+    </BrowserRouter>
+   
   );
 }
 
