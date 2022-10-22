@@ -1,7 +1,6 @@
 import React from 'react';
 import URL from './URL';
 
-let url = URL();
 
 export default function Result ()
 {
