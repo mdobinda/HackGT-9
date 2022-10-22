@@ -106,3 +106,30 @@ code {
   background: rgba(255, 255, 255, .2);
 }
 
+.backButton {
+  height: 5%;
+  width: 5%;
+  padding: 0.3%;
+  borderRadius: 10%;
+  margin-left: 2%;
+  margin-top: 2%;
+}
+
+.backButton:hover {
+  color: rgb(253, 255, 230);
+  background-color: rgb(198, 198, 242);
+}
+
+.forwardButton {
+  height: 5%;
+  width: 5%;
+  padding: 0.3%;
+  margin-right: 2%;
+  margin-top: 2%;
+  borderRadius: 10%;
+}
+
+.forwardButton:hover {
+  color: rgb(243, 222, 222);
+  background-color: rgb(201, 201, 255);
+}
