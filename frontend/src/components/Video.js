@@ -21,7 +21,7 @@ const Video = () => {
    
     <div>
         <Link to='/training' className='btn'> My safe spots </Link>
-        <Link to='/contact' className='btn btn-light'> Let's figure it out </Link>
+        <Link to='/contact' className='btn'> Let's figure it out </Link>
 
     </div>
     </div>
