@@ -1,5 +1,4 @@
 import React from 'react';
-import URL from './URL';
 
 
 export default function Result ()
