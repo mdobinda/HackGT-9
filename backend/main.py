@@ -2,10 +2,26 @@ from fastapi import FastAPI, APIRouter, Request
 from dotenv import load_dotenv
 from functions import connectToDB
 from bson.objectid import ObjectId
+from fastapi.middleware.cors import CORSMiddleware
 
 router = APIRouter()
 load_dotenv()
 app = FastAPI()
+origins = [
+    'null',
+    "http://localhost:3000",
+    "http://localhost",
+    "http://localhost:8080",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 fs = connectToDB(app)
 
 
