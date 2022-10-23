@@ -13,12 +13,12 @@
 .Answer
 {
     border-radius:15px;
-    background-color:white;
+    background-color: #e4dac9;
     height:15vh;
     line-height: 15vh;
     width:50%;
     max-width: 500px;
-    color:rgb(64, 64, 173);
+    color:rgb(34, 13, 13);
     text-align:center;    
     transition:ease-in-out transform .4s, ease-in-out opacity .9s;
     margin-top:3vh;
