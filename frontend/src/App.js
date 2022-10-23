@@ -7,7 +7,6 @@ import Feeling from './survey/Feeling';
 import Drinky from './survey/Drinky'; 
 import Deeper from './survey/FeelingDeeper';
 import Player from './components/Player'
-import Result from "./result";
 
 function App() {
   return (
