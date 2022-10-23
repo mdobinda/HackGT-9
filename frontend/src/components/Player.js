@@ -47,9 +47,9 @@ const Player = () => {
                 labelId="demo-simple-select-disabled-label"
                 id="demo-simple-select-disabled"
                 value={value}
-                onChange={(newVal) => setValue(newVal)}
+                onChange={(newVal) => {console.log(); setValue(newVal.target.value)}}
                 label="file"
-                style={{width: '30vw', backgroundColor: 'white', color: 'black'}}
+                style={{width: '30vw', backgroundColor:'white'}}
                 >
                 
                     {
