@@ -2,8 +2,7 @@ import React, {useState, useEffect} from 'react';
 import './Survey.css';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import feels from '../assets/interesting.png'
-import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 const layers = require("./questions.json");
 
 
@@ -56,23 +55,14 @@ export default function Feeling()
 
             
         
-        <div style={{display: "flex", width: "100vw", alignItems: "flex-end", justifyContent: "space-between"}}> 
+        <div style={{display: "flex", width: "100vw", alignItems: "flex-end", justifyContent: "space-between", padding: "3%"}}> 
         
-        <button className='backButton' onClick={sayHello} >
+        <Link to='/contact'>  <ArrowBackIcon/> </Link>
 
-        <ArrowBackIcon/>
-         </button>
-
-         <button className='forwardButton' onClick={sayHello} >
-
-        
-        <ArrowForwardIcon/>
-        </button>
+        <Link to='/deeper'>  <ArrowForwardIcon/>  </Link>
 
         </div>
    
-
-            
         </div>
     )
 }
