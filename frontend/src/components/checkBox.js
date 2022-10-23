@@ -5,10 +5,15 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Checkbox from '@mui/material/Checkbox';
+import { useNavigate, useLocation } from 'react-router-dom';
+
 
 
 export default function CheckboxList() {
   const [checked, setChecked] = React.useState([0]);
+  const location = useLocation();
+  const layers = require(`../survey/${location.state.emotion}.json`);
+
   let anxiety = ["Overstimulated", "Panic", "Fear", "Shame/Guilt", "Trauma", "None of these"];
 
   const handleToggle = (value) => () => {
@@ -26,7 +31,7 @@ export default function CheckboxList() {
 
   return (
     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-      {anxiety.map((value) => {
+      {layers["deeper"].map((value) => {
         const labelId = `checkbox-list-label-${value}`;
 
         return (
