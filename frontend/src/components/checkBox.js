@@ -14,7 +14,6 @@ export default function CheckboxList() {
   const location = useLocation();
   const layers = require(`../survey/${location.state.emotion}.json`);
 
-  let anxiety = ["Overstimulated", "Panic", "Fear", "Shame/Guilt", "Trauma", "None of these"];
 
   const handleToggle = (value) => () => {
     console.log("hehe" + value)
