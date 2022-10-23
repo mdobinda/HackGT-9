@@ -17,6 +17,7 @@ export default function CheckboxList() {
   let anxiety = ["Overstimulated", "Panic", "Fear", "Shame/Guilt", "Trauma", "None of these"];
 
   const handleToggle = (value) => () => {
+    console.log("hehe" + value)
     const currentIndex = checked.indexOf(value);
     const newChecked = [...checked];
 
@@ -45,7 +46,6 @@ export default function CheckboxList() {
                   edge="start"
                   checked={checked.indexOf(value) !== -1}
                   tabIndex={-1}
-                  disableRipple
                   inputProps={{ 'aria-labelledby': labelId }}
                 />
               </ListItemIcon>
