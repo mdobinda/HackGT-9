@@ -2,15 +2,20 @@ import React, {useState, useEffect} from 'react';
 import './Survey.css';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
 const layers = require("./questions.json");
 
 
 
-export default function Feeling()
+export default function Drinky()
 {
+    console.log()
     const [transition, setTransition] = useState("Question hidden")
     const [hideAns, setHideAns] = useState(true);
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const calmMap = require('./calm.json')
 
     function sayHello() {
         alert('You clicked me!');
@@ -31,7 +36,7 @@ export default function Feeling()
             <div style={{display:"flex", flexDirection:"row", color: "white"}}>
                 <div style={{display:"flex", flexDirection:"column" ,alignContent:"center", justifyContent:"center", alignItems:"center", marginLeft:"5vw", width:"50vw", marginRight:"-10vw"}}>
                     <h2> When is the last time you've </h2>
-                    <h2> had a bite to eat? </h2>
+                    <h2> gotten direct sunlight? </h2>
                     {layers["root"].map((question) => {
                         return(
                             <div id={question} className={hideAns ? "Answer hidden" : "Answer"} onLoad={setTimeout(() => {setHideAns(false)}, 700)}>
@@ -57,9 +62,9 @@ export default function Feeling()
         
         <div style={{display: "flex", width: "100vw", alignItems: "flex-end", justifyContent: "space-between", padding: "3%"}}> 
         
-        <Link to='/contact'>  <ArrowBackIcon/> </Link>
+        <div onClick={() => navigate("/deeper", {state:{"emotion": location.state.base}})}>  <ArrowBackIcon/>  </div>
 
-        <Link to='/deeper'>  <ArrowForwardIcon/>  </Link>
+        <div onClick={() => navigate("/results", {state:{"base": location.state.base}})}>  <ArrowForwardIcon/>  </div>
 
         </div>
    
