@@ -98,7 +98,7 @@ export default function Feeling({props})
 
             <div style={{display: "flex", width: "100vw", alignItems: "flex-end", justifyContent: "space-between", padding: "3%"}}> 
         
-            <div onClick={() => goToDrink()}>  <ArrowBackIcon style={{marginRight:"8vw", color:"white"}}/>  </div>
+            <div onClick={() => navigation("/feeling")}>  <ArrowBackIcon style={{marginRight:"8vw", color:"white"}}/>  </div>
 
 
             <div onClick={() => goToDrink()}>  <ArrowForwardIcon style={{marginRight:"8vw", color:"white"}}/>  </div>

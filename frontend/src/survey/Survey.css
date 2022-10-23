@@ -34,3 +34,8 @@
 {
     transform:translate(0,-1vh);
 }
+
+.Selected
+{
+    background-color: #b3a793;
+}

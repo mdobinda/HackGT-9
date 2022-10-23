@@ -48,7 +48,7 @@ export default function Feeling()
         
 
 
-        <Link to='/home'>  <ArrowBackIcon/> </Link>
+        <Link to='/'>  <ArrowBackIcon/> </Link>
 
       
 
