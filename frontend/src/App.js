@@ -1,5 +1,6 @@
 import React from "react";
 import { Routes, Route, BrowserRouter} from 'react-router-dom'
+import Result from "./result";
 import Home from './routes/Home'
 import Maps from './components/Maps'
 import Feeling from './survey/Feeling';
@@ -14,6 +15,7 @@ function App() {
       <Route path='/' element={<Home/>}/> 
       <Route path='/training' element={<Maps/>}/>
       <Route path='/contact' element={<Feeling/>}/>
+      <Route path='/results' element={<Result/>}/>
     </Routes>
     
     
