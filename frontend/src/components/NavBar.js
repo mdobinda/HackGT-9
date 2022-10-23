@@ -16,7 +16,7 @@ const NavBar = () => {
  
         <Link to = '/'> 
         
-        <h1> HackGT </h1> 
+        <h1> Calm-Sci </h1> 
 
          </Link>
         {

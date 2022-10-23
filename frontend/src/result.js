@@ -1,12 +1,20 @@
 import React, {useState} from 'react';
-import {ExpandMore} from '@mui/icons-material';
+import {FmdGood, ExpandMore} from '@mui/icons-material';
 import {
     Accordion, AccordionDetails, 
     AccordionSummary, Card, 
     CardActionArea, CardContent, 
-    CardMedia, Divider, 
     Icon, Typography,
 } from '@mui/material';
+import GoogleMap from 'google-map-react';
+import {Apiconfig} from './Apiconfig'
+
+
+const Marker = ({  }) => {return (<div className="pin">
+<Icon color="error">
+    <FmdGood className="pin-icon" />
+</Icon>
+</div>)}
 
 
 export default function Result ()
@@ -17,6 +25,14 @@ export default function Result ()
         event.preventDefault()
         setExpanded(isExpanded ? panel : false);
       };
+
+      const defaultProps = {
+        center: {
+                lat: 33.7756,
+                lng: -84.3963
+        },
+        zoom: 15
+    };
 
     return(
         <div style={{ display:"flex",width: "100%", border:"none",textAlign:"center",  justifyContent: "space-between"}}>
@@ -35,8 +51,8 @@ export default function Result ()
 
                         </AccordionDetails>
                     </Accordion>
-                    <Accordion expandIcon={<ExpandMore />} style={{minWidth:"300px"}}>
-                        <AccordionSummary sx={{textAlign: "center", alignItems:"center", justifyContent:"center"}} id={"strategy1"}>
+                    <Accordion style={{minWidth:"300px"}}>
+                        <AccordionSummary expandIcon={<ExpandMore />}  sx={{textAlign: "center", alignItems:"center", justifyContent:"center"}} id={"strategy1"}>
                             <Typography color="black" fontWeight = "500"> 5-4-3-2-1 Grounding Method </Typography>
                         </AccordionSummary>
                         <AccordionDetails>
@@ -73,8 +89,8 @@ export default function Result ()
 
                         </AccordionDetails>
                     </Accordion>
-                    <Accordion expandIcon={<ExpandMore />} style={{minWidth:"300px"}}>
-                        <AccordionSummary sx={{textAlign: "center", alignItems:"center", justifyContent:"center"}} id={"strategy2"}>
+                    <Accordion style={{minWidth:"300px"}}>
+                        <AccordionSummary expandIcon={<ExpandMore />}  sx={{textAlign: "center", alignItems:"center", justifyContent:"center"}} id={"strategy2"}>
                             <Typography color="black" fontWeight = "500"> 4-7-8 Breathing Techniques  </Typography>
 
                             
@@ -94,8 +110,8 @@ export default function Result ()
                         Repeat the cycle up to four times, unless uncomfortable.
                         </AccordionDetails>
                     </Accordion>
-                    <Accordion expandIcon={<ExpandMore />} style={{minWidth:"300px"}}>
-                        <AccordionSummary sx={{textAlign: "center", alignItems:"center", justifyContent:"center"}} id={"strategy1"}>
+                    <Accordion  style={{minWidth:"300px"}}>
+                        <AccordionSummary expandIcon={<ExpandMore />} sx={{textAlign: "center", alignItems:"center", justifyContent:"center"}} id={"strategy1"}>
                             <Typography color="black" fontWeight = "500">  Do something tactile </Typography>
                         </AccordionSummary>
                         <AccordionDetails></AccordionDetails>
@@ -106,31 +122,123 @@ export default function Result ()
                     
 
 
-                    <div style={{width:"25vw", flexDirection: "row", justifyContent: 'space-between', margin: "10%", marginLeft: "60%" }}>
+                    <div style={{width:"25vw", height: '50vh', flexDirection: "row", justifyContent: 'space-between', margin: "10%", marginLeft: "60%" }}>
                     <Accordion expanded={false} style={{minWidth:"300px"}}>
                         <AccordionSummary sx={{textAlign: "center", alignItems:"center", justifyContent:"center"}}>
                             <Typography sx={{flexGrow:1, fontWeight:600, fontSize:24}} textAlign={"center"} color="black"> Spaces </Typography>
                         </AccordionSummary>
                         <AccordionDetails></AccordionDetails>
-                    </Accordion>
-                    <Accordion expandIcon={<ExpandMore />} style={{minWidth:"300px"}}>
-                        <AccordionSummary sx={{textAlign: "center", alignItems:"center", justifyContent:"center"}}>
-                            <Typography color="black" fontWeight="500"> Minnie name this on!!!e something </Typography>
-                        </AccordionSummary>
-                        <AccordionDetails></AccordionDetails>
-                    </Accordion>
-                    <Accordion expandIcon={<ExpandMore />} style={{minWidth:"300px"}}>
-                        <AccordionSummary sx={{textAlign: "center", alignItems:"center", justifyContent:"center"}}>
-                            <Typography color="black" fontWeight="500"> Minnie name this one something </Typography>
-                        </AccordionSummary>
-                        <AccordionDetails></AccordionDetails>
-                    </Accordion>
-                    <Accordion expandIcon={<ExpandMore />} style={{minWidth:"300px"}}>
-                        <AccordionSummary sx={{textAlign: "center", alignItems:"center", justifyContent:"center"}}>
-                            <Typography color="black" fontWeight="500"> Minnie name this one something </Typography>
-                        </AccordionSummary>
-                        <AccordionDetails></AccordionDetails>
-                    </Accordion>
+                        </Accordion>
+
+                        <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+                        
+                <AccordionSummary
+                expandIcon={<ExpandMore />}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+                >
+                <Typography color="black">My safe spot 1</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                    <Card sx={{width: "22vw", height: "40vh"}}>
+                        <CardActionArea>
+                        <div style={{width: '22vw', height: '25vh'}}>
+                            <GoogleMap
+                            bootstrapURLKeys={{ key: Apiconfig.mapsKey }}
+                            defaultCenter={defaultProps.center}
+                            defaultZoom={defaultProps.zoom}
+                            >
+                                <Marker
+                                lat={33.777}
+                                lng={-84.3963}
+                                />
+                            </GoogleMap>
+                            </div>
+                        
+                    </CardActionArea>
+                    <CardContent style={{padding: '5px'}}>
+                        <Typography color="black" variant="h6" align="center">
+                            My safe spot 1
+                        </Typography>
+                        <Typography color="black" align="center">
+                            Make a stop by the Minnie Mouse clock
+                        </Typography>
+                    </CardContent>
+                </Card>
+                </AccordionDetails>
+            </Accordion>
+            <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
+                <AccordionSummary
+                expandIcon={<ExpandMore />}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+                >
+                <Typography color="black">My safe spot 2</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                    <Card sx={{width: "22vw", height: "40vh"}}>
+                        <CardActionArea>
+                        <div style={{width: '22vw', height: '25vh'}}>
+                            <GoogleMap
+                            bootstrapURLKeys={{ key: Apiconfig.mapsKey }}
+                            defaultCenter={defaultProps.center}
+                            defaultZoom={defaultProps.zoom}
+                            >
+                                <Marker
+                                lat={33.777}
+                                lng={-84.3993}
+                                />
+                            </GoogleMap>
+                            </div>
+                        
+                    </CardActionArea>
+                    <CardContent style={{padding: '5px'}}>
+                        <Typography color="black" variant="h6" align="center">
+                            My safe spot 2
+                        </Typography>
+                        <Typography color="black" align="center">
+                            This is a cool, laid back garden to vibe in
+                        </Typography>
+                    </CardContent>
+                </Card>
+                </AccordionDetails>
+                </Accordion>
+                <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
+                <AccordionSummary
+                expandIcon={<ExpandMore />}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+                >
+                <Typography color="black">My safe spot 3</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                    <Card sx={{width: "22vw", height: "40vh"}}>
+                        <CardActionArea>
+                        <div style={{width: '22vw', height: '25vh'}}>
+                            <GoogleMap
+                            bootstrapURLKeys={{ key: Apiconfig.mapsKey }}
+                            defaultCenter={defaultProps.center}
+                            defaultZoom={defaultProps.zoom}
+                            >
+                                <Marker
+                                lat={33.775}
+                                lng={-84.3963}
+                                />
+                            </GoogleMap>
+                            </div>
+                        
+                    </CardActionArea>
+                    <CardContent style={{padding: '5px'}}>
+                        <Typography color="black" variant="h6" align="center">
+                            My safe spot 3
+                        </Typography>
+                        <Typography color="black" align="center">
+                            Check out some of the hammocks in the eco-commons
+                        </Typography>
+                    </CardContent>
+                </Card>
+                </AccordionDetails>
+            </Accordion>
                     </div>
 
                 </div>
