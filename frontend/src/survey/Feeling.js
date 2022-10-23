@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './Survey.css';
 import feels from '../assets/interesting.png'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
@@ -11,12 +11,21 @@ export default function Feeling()
 {
     const [transition, setTransition] = useState("Question hidden")
     const [hideAns, setHideAns] = useState(true);
+    const [question, setQuestion] = useState("none")
+    const [goNext, setGoNext] = useState(false);
+    const navigation = useNavigate()
     useEffect(() => {
         setTransition("Question");
       });
 
       function sayHello() {
         alert('You clicked me!');
+      }
+
+      function goDeeper(question)
+      {
+        console.log(question);
+        navigation("/deeper", {state:{"emotion":question}})
       }
     
     return(
@@ -29,7 +38,7 @@ export default function Feeling()
             <div style={{display:"flex", flexDirection:"column" ,alignContent:"center", justifyContent:"center", alignItems:"center", marginLeft:"20vw"}}>
                 {layers["root"].map((question) => {
                     return(
-                        <div id={question} className={hideAns ? "Answer hidden" : "Answer"} onLoad={setTimeout(() => {setHideAns(false)}, 700)}>
+                        <div key={question} id={question} className={hideAns ? "Answer hidden" : "Answer"} onClick={() => goDeeper(question)} onLoad={setTimeout(() => setTimeout(setHideAns(false), 700))}>
                             <h3>{question}</h3>
                         </div>
                     )
@@ -41,8 +50,7 @@ export default function Feeling()
 
         <Link to='/'>  <ArrowBackIcon/> </Link>
 
-
-         <Link to='/deeper'>  <ArrowForwardIcon/>  </Link>
+      
 
         </div>
 
