@@ -6,6 +6,8 @@ import Maps from './components/Maps'
 import Feeling from './survey/Feeling';
 import Drinky from './survey/Drinky'; 
 import Deeper from './survey/FeelingDeeper';
+import Player from './components/Player'
+import Result from "./result";
 
 
 
@@ -20,6 +22,8 @@ function App() {
       <Route path='/results' element={<Result/>}/>
       <Route path='/drinky' element={<Drinky/>}/>
       <Route path='/deeper' element={<Deeper/>}/>
+      <Route path='/player' element={<Player/>}/>
+      <Route path='/results' element={<Result/>}/>
     </Routes>
     
     
