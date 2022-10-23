@@ -9,8 +9,6 @@ import Deeper from './survey/FeelingDeeper';
 import Player from './components/Player'
 import Result from "./result";
 
-
-
 function App() {
   return (
     <BrowserRouter>
