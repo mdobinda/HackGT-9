@@ -6,6 +6,7 @@ import {
     CardActionArea, CardContent, 
     Icon, Typography,
 } from '@mui/material';
+import {useLocation} from 'react-router-dom';
 import GoogleMap from 'google-map-react';
 import {Apiconfig} from './Apiconfig'
 
@@ -26,6 +27,9 @@ export default function Result ()
         setExpanded(isExpanded ? panel : false);
       };
 
+      let location = useLocation();
+      console.log(location.state);
+
       const defaultProps = {
         center: {
                 lat: 33.7756,
@@ -36,7 +40,7 @@ export default function Result ()
 
     return(
         <div style={{ display:"flex",width: "100%", border:"none",textAlign:"center",  justifyContent: "space-between"}}>
-            <div style={{border:"solid 5px black", marginTop:"15vh" ,width:"100vw", flexDirection:"row"}}>
+            <div style={{ marginTop:"15vh" ,width:"100vw", flexDirection:"row"}}>
                 <div style={{display:'flex', width:"25vw", height:'100%', marginLeft:"10vh", flexDirection:"row", alignItems: 'space-between'}}>    
 
               
